@@ -2,9 +2,6 @@
 
 set -xeuo pipefail
 
-# [How do I get the directory where a Bash script is located from within the script itself?](https://stackoverflow.com/a/246128)
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-
 TMPDIR="${TMPDIR:-/tmp}"
 
 # [Clang: Locally Disabling Warnings](https://embeddedartistry.com/blog/2017/06/07/warnings-weverything-and-the-kitchen-sink/#clang-locally-disabling-warnings)
@@ -21,13 +18,13 @@ clang \
     -Wno-vla \
     -ferror-limit=1 \
     -fsanitize=address,undefined,leak,integer \
-    -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c \
+    -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c \
     -o "${TMPDIR}/a.out"
 
 # [Which of the three mutually exclusive Clang sanitizers should I default to?](https://stackoverflow.com/questions/50364533/which-of-the-three-mutually-exclusive-clang-sanitizers-should-i-default-to)
 set +x
-clang -std=c2x -fsanitize=memory -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
-clang -std=c2x -fsanitize=thread -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
-clang -fsanitize=address,undefined,leak,integer -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -std=c2x -fsanitize=memory -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -std=c2x -fsanitize=thread -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -fsanitize=address,undefined,leak,integer -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
 set -x
-clang -std=c2x -g3 -O0 -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -std=c2x -g3 -O0 -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
