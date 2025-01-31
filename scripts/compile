@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -xeuo pipefail
+
+# [How do I get the directory where a Bash script is located from within the script itself?](https://stackoverflow.com/a/246128)
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+TMPDIR="${TMPDIR:-/tmp}"
+
+# [Clang: Locally Disabling Warnings](https://embeddedartistry.com/blog/2017/06/07/warnings-weverything-and-the-kitchen-sink/#clang-locally-disabling-warnings)
+clang \
+    -std=c2x \
+    -g3 \
+    -O0 \
+    -Weverything `# [Clang: -Weverything](https://embeddedartistry.com/blog/2017/06/07/warnings-weverything-and-the-kitchen-sink/#clang-weverything)` \
+    -Werror \
+    -Wno-pre-c23-compat \
+    -Wno-unsafe-buffer-usage \
+    -Wno-declaration-after-statement \
+    -Wno-padded \
+    -Wno-vla \
+    -ferror-limit=1 \
+    -fsanitize=address,undefined,leak,integer \
+    -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c \
+    -o "${TMPDIR}/a.out"
+
+# [Which of the three mutually exclusive Clang sanitizers should I default to?](https://stackoverflow.com/questions/50364533/which-of-the-three-mutually-exclusive-clang-sanitizers-should-i-default-to)
+set +x
+clang -std=c2x -fsanitize=memory -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -std=c2x -fsanitize=thread -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -fsanitize=address,undefined,leak,integer -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+set -x
+clang -std=c2x -g3 -O0 -I "${SCRIPT_DIR}"/Unity/src "$1" "${SCRIPT_DIR}"/Unity/src/unity.c -o "${TMPDIR}/a.out"

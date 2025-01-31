@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -xeuo pipefail
+
+TMPDIR="${TMPDIR:-/tmp}"
+
+"${TMPDIR}/a.out"
