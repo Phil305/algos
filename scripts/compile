@@ -22,9 +22,7 @@ clang \
     -o "${TMPDIR}/a.out"
 
 # [Which of the three mutually exclusive Clang sanitizers should I default to?](https://stackoverflow.com/questions/50364533/which-of-the-three-mutually-exclusive-clang-sanitizers-should-i-default-to)
-set +x
-clang -std=c2x -fsanitize=memory -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
-clang -std=c2x -fsanitize=thread -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -fsanitize=memory -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
+clang -fsanitize=thread -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
 clang -fsanitize=address,undefined,leak,integer -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
-set -x
 clang -std=c2x -g3 -O0 -I "${REPO_ROOT}"/Unity/src "$1" "${REPO_ROOT}"/Unity/src/unity.c -o "${TMPDIR}/a.out"
