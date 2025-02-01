@@ -26,7 +26,8 @@ static void test_GivenXYZ_DoABC(void) {
     int expected[] = {-21,-5,-1,0,1, 3, 11};
     int array[] = {0,1,-21,-5, 11,-1, 3};
     // [Unity Assertions Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
-    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/array, /*num_elements=*/2);
+    raise(SIGINT);
+    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/array, /*num_elements=*/sizeof(expected));
 }
 
 int main(void) {
