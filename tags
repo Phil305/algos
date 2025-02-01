@@ -134,17 +134,6 @@
 !_TAG_ROLE_DESCRIPTION!Sh!heredoc	endmarker	/end marker/
 !_TAG_ROLE_DESCRIPTION!Sh!script	loaded	/loaded/
 !_TAG_ROLE_DESCRIPTION!Yaml!anchor	alias	/alias/
-$(BUILD_DIR)	Unity/extras/fixture/test/Makefile	/^$(BUILD_DIR):$/;"	t
-$(BUILD_DIR)	Unity/extras/memory/test/Makefile	/^$(BUILD_DIR):$/;"	t
-$(BUILD_DIR)	Unity/test/Makefile	/^$(BUILD_DIR):$/;"	t
-$(BUILD_DIR)/test_unity_arraysRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_arraysRunner.c: tests\/test_unity_arrays.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_coreRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_coreRunner.c: tests\/test_unity_core.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_doublesRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_doublesRunner.c: tests\/test_unity_doubles.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_floatsRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_floatsRunner.c: tests\/test_unity_floats.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_integersRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_integersRunner.c: tests\/test_unity_integers.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_integers_64Runner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_integers_64Runner.c: tests\/test_unity_integers_64.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_memoryRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_memoryRunner.c: tests\/test_unity_memory.c | $(BUILD_DIR)$/;"	t
-$(BUILD_DIR)/test_unity_stringsRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test_unity_stringsRunner.c: tests\/test_unity_strings.c | $(BUILD_DIR)$/;"	t
 01-test-case	Unity/examples/example_4/test/test_runners/meson.build	/^test('01-test-case', executable('01-test-case', cases[0], dependencies: [ a_dep, unity_dep ]))$/;"	B
 01-test-case	Unity/examples/example_4/test/test_runners/meson.build	/^test('01-test-case', executable('01-test-case', cases[0], dependencies: [ a_dep, unity_dep ]))$/;"	t
 02-test-case	Unity/examples/example_4/test/test_runners/meson.build	/^test('02-test-case', executable('02-test-case', cases[1], dependencies: [ b_dep, unity_dep ]))$/;"	B
@@ -155,8 +144,6 @@ $(BUILD_DIR)/test_unity_stringsRunner.c	Unity/test/Makefile	/^$(BUILD_DIR)\/test
 2. Warning	Unity/docs/CODE_OF_CONDUCT.md	/^### 2. Warning$/;"	S	section:ThrowTheSwitch.org Code of Conduct""Enforcement Guidelines
 3	Unity/test/targets/iar_msp430.yml	/^core_lib: &3$/;"	a
 3. Temporary Ban	Unity/docs/CODE_OF_CONDUCT.md	/^### 3. Temporary Ban$/;"	S	section:ThrowTheSwitch.org Code of Conduct""Enforcement Guidelines
-32bits	Unity/extras/fixture/test/Makefile	/^32bits: $(BUILD_DIR)$/;"	t
-32bits	Unity/extras/memory/test/Makefile	/^32bits: $(BUILD_DIR)$/;"	t
 4	Unity/test/targets/iar_msp430.yml	/^core_config: &4$/;"	a
 4. Permanent Ban	Unity/docs/CODE_OF_CONDUCT.md	/^### 4. Permanent Ban$/;"	S	section:ThrowTheSwitch.org Code of Conduct""Enforcement Guidelines
 5	Unity/test/targets/iar_msp430.yml	/^core_inc: &5$/;"	a
@@ -178,7 +165,6 @@ A Note	Unity/docs/UnityKnownIssues.md	/^## A Note$/;"	s	chapter:Unity Test - Kno
 ARGV	Unity/auto/generate_module.rb	/^      ARGV = [].freeze$/;"	C
 ASSIGN_VALUE	Unity/extras/memory/test/unity_memory_Test.c	/^#define ASSIGN_VALUE(/;"	d	file:
 ASSIGN_VALUE	Unity/test/tests/self_assessment_utils.h	/^#define ASSIGN_VALUE(/;"	d
-AWK_SCRIPT	Unity/test/Makefile	/^AWK_SCRIPT=\\$/;"	m
 AbortFrame	Unity/src/unity_internals.h	/^    jmp_buf AbortFrame;$/;"	m	struct:UNITY_STORAGE_T	typeref:typename:jmp_buf
 AbortFrame	Unity/test/tests/test_unity_core.c	/^        jmp_buf AbortFrame;$/;"	m	struct:testUnitySizeInitializationReminder::__anon8917f9cf0108	typeref:typename:jmp_buf	file:
 AbortFrame	Unity/test/tests/test_unity_core.c	/^        jmp_buf AbortFrame;$/;"	m	struct:testUnitySizeInitializationReminder::__anon8917f9cf0208	typeref:typename:jmp_buf	file:
@@ -192,9 +178,6 @@ Assertion Conventions and Configurations	Unity/docs/UnityAssertionsReference.md	
 Attribution	Unity/docs/CODE_OF_CONDUCT.md	/^## Attribution$/;"	s	chapter:ThrowTheSwitch.org Code of Conduct
 BDD Macros	Unity/extras/bdd/readme.md	/^### BDD Macros$/;"	S	section:Unity Project - BDD Feature""Usage
 BDD Tester	Unity/extras/bdd/test/meson.build	/^project('BDD Tester', 'c')$/;"	P
-BUILD_DIR	Unity/extras/fixture/test/Makefile	/^BUILD_DIR = ..\/build$/;"	m
-BUILD_DIR	Unity/extras/memory/test/Makefile	/^BUILD_DIR = ..\/build$/;"	m
-BUILD_DIR	Unity/test/Makefile	/^BUILD_DIR = build$/;"	m
 Background and Overview	Unity/docs/UnityAssertionsReference.md	/^## Background and Overview$/;"	s	chapter:Unity Assertions Reference
 Basic Fail, Pass and Ignore	Unity/docs/UnityAssertionsReference.md	/^### Basic Fail, Pass and Ignore$/;"	S	section:Unity Assertions Reference""The Assertions in All Their Blessed Glory
 Basic Validity Tests	Unity/README.md	/^### Basic Validity Tests$/;"	S	section:Unity Test ![CI][]""Unity Assertion Summary
@@ -203,16 +186,6 @@ Braces in C/C++	Unity/docs/ThrowTheSwitchCodingStandard.md	/^### Braces in C\/C+
 C Standards, Compilers and Microcontrollers	Unity/docs/UnityConfigurationGuide.md	/^## C Standards, Compilers and Microcontrollers$/;"	s	chapter:Unity Configuration Guide
 C Styleguide	Unity/docs/CONTRIBUTING.md	/^### C Styleguide$/;"	S	section:Contributing to a ThrowTheSwitch.org Project"":violin: Coding Style
 C and C++ Details	Unity/docs/ThrowTheSwitchCodingStandard.md	/^## C and C++ Details$/;"	s	chapter:ThrowTheSwitch.org Coding Standard
-C89	Unity/extras/fixture/test/Makefile	/^C89: $(BUILD_DIR)$/;"	t
-C89	Unity/extras/fixture/test/Makefile	/^C89: CFLAGS += -D UNITY_EXCLUDE_STDINT_H # C89 did not have type 'long long', <stdint.h>$/;"	t
-C89	Unity/extras/memory/test/Makefile	/^C89: $(BUILD_DIR)$/;"	t
-C89	Unity/extras/memory/test/Makefile	/^C89: CFLAGS += -D UNITY_EXCLUDE_STDINT_H # C89 did not have type 'long long', <stdint.h>$/;"	t
-CC	Unity/extras/fixture/test/Makefile	/^CC = clang$/;"	m
-CC	Unity/extras/fixture/test/Makefile	/^CC = gcc$/;"	m
-CC	Unity/extras/memory/test/Makefile	/^CC = clang$/;"	m
-CC	Unity/extras/memory/test/Makefile	/^CC = gcc$/;"	m
-CC	Unity/test/Makefile	/^CC = clang$/;"	m
-CC	Unity/test/Makefile	/^CC = gcc$/;"	m
 CEXCEPTION_BEING_USED	Unity/test/testdata/CException.h	/^#define CEXCEPTION_BEING_USED /;"	d
 CEXCEPTION_H	Unity/test/testdata/CException.h	/^#define CEXCEPTION_H$/;"	d
 CEXCEPTION_NONE	Unity/test/testdata/CException.h	/^#define CEXCEPTION_NONE /;"	d
@@ -254,7 +227,6 @@ CMock_Verify	Unity/test/expectdata/testsample_mock_param.c	/^static void CMock_V
 CMock_Verify	Unity/test/expectdata/testsample_mock_run1.c	/^static void CMock_Verify(void)$/;"	f	typeref:typename:void	file:
 CMock_Verify	Unity/test/expectdata/testsample_mock_run2.c	/^static void CMock_Verify(void)$/;"	f	typeref:typename:void	file:
 CMock_Verify	Unity/test/expectdata/testsample_mock_yaml.c	/^static void CMock_Verify(void)$/;"	f	typeref:typename:void	file:
-COV_FLAGS	Unity/test/Makefile	/^COV_FLAGS = -fprofile-arcs -ftest-coverage -I ..\/..\/src$/;"	m
 C_COMPILER	Unity/examples/example_1/makefile	/^C_COMPILER=clang$/;"	m
 C_COMPILER	Unity/examples/example_1/makefile	/^C_COMPILER=gcc$/;"	m
 C_COMPILER	Unity/examples/example_2/makefile	/^C_COMPILER=clang$/;"	m
@@ -307,15 +279,12 @@ CurrentTestStopTime	Unity/src/unity_internals.h	/^    UNITY_TIME_TYPE CurrentTes
 CurrentTestStopTime	Unity/test/tests/test_unity_core.c	/^        UNITY_COUNTER_TYPE CurrentTestStopTime;$/;"	m	struct:testUnitySizeInitializationReminder::__anon8917f9cf0208	typeref:typename:UNITY_COUNTER_TYPE	file:
 CurrentTestStopTime	Unity/test/tests/test_unity_core.c	/^        UNITY_TIME_TYPE CurrentTestStopTime;$/;"	m	struct:testUnitySizeInitializationReminder::__anon8917f9cf0108	typeref:typename:UNITY_TIME_TYPE	file:
 DEFAULT_CONFIG_FILE	Unity/examples/example_3/rakefile.rb	/^DEFAULT_CONFIG_FILE = 'target_gcc_32.yml'.freeze$/;"	C
-DEFINES	Unity/extras/memory/test/Makefile	/^DEFINES = -D UNITY_OUTPUT_CHAR=UnityOutputCharSpy_OutputChar$/;"	m
-DEFINES	Unity/test/Makefile	/^DEFINES =  -D UNITY_OUTPUT_CHAR=putcharSpy$/;"	m
 DEF_H	Unity/test/testdata/Defs.h	/^#define DEF_H$/;"	d
 DOUBLES_EQUAL	Unity/extras/fixture/src/unity_fixture.h	/^#define DOUBLES_EQUAL(/;"	d
 Dependency Notification	Unity/extras/fixture/readme.md	/^## Dependency Notification$/;"	s	chapter:Unity Fixtures
 Descriptive	Unity/docs/ThrowTheSwitchCodingStandard.md	/^### Descriptive$/;"	S	section:ThrowTheSwitch.org Coding Standard""Naming Things
 Documentation	Unity/docs/ThrowTheSwitchCodingStandard.md	/^## Documentation$/;"	s	chapter:ThrowTheSwitch.org Coding Standard
 Double (If enabled)	Unity/docs/UnityAssertionsReference.md	/^### Double (If enabled)$/;"	S	section:Unity Assertions Reference""The Assertions in All Their Blessed Glory
-E	Unity/test/Makefile	/^E = -Weverything$/;"	m
 ENUM_2	Unity/test/tests/types_for_test.h	/^    ENUM_2,$/;"	e	enum:__anon70218c8e0103
 ENUM_4	Unity/test/tests/types_for_test.h	/^    ENUM_4,$/;"	e	enum:__anon70218c8e0103
 ENUM_A	Unity/test/tests/types_for_test.h	/^    ENUM_A,$/;"	e	enum:__anon70218c8e0103
@@ -368,9 +337,6 @@ How to Build and Run A Test File	Unity/docs/UnityGettingStartedGuide.md	/^## How
 How to Create A Test File	Unity/docs/UnityGettingStartedGuide.md	/^## How to Create A Test File$/;"	s	chapter:Unity - Getting Started
 IGNORE_TEST	Unity/extras/fixture/src/unity_fixture.h	/^#define IGNORE_TEST(/;"	d
 IGNORE_TEST	Unity/extras/fixture/test/unity_fixture_Test.c	/^IGNORE_TEST(UnityCommandOptions, TestShouldBeIgnored)$/;"	f
-INC_DIR	Unity/extras/fixture/test/Makefile	/^INC_DIR = -I..\/src -I..\/..\/..\/src\/$/;"	m
-INC_DIR	Unity/extras/memory/test/Makefile	/^INC_DIR = -I..\/src -I..\/..\/..\/src\/$/;"	m
-INC_DIR	Unity/test/Makefile	/^INC_DIR = -I ..\/src$/;"	m
 INC_DIRS	Unity/examples/example_1/makefile	/^INC_DIRS=-Isrc -I$(UNITY_ROOT)\/src$/;"	m
 INC_DIRS	Unity/examples/example_2/makefile	/^INC_DIRS=-Isrc -I$(UNITY_ROOT)\/src -I$(UNITY_ROOT)\/extras\/fixture\/src$/;"	m
 Ignoring Test Functions	Unity/docs/UnityGettingStartedGuide.md	/^### Ignoring Test Functions$/;"	S	section:Unity - Getting Started""How to Create A Test File
@@ -468,16 +434,6 @@ Running Test Functions	Unity/docs/UnityGettingStartedGuide.md	/^### Running Test
 SECOND_PARAM	Unity/extras/memory/test/unity_memory_Test.c	/^#define SECOND_PARAM(/;"	d	file:
 SECOND_PARAM	Unity/test/tests/self_assessment_utils.h	/^#define SECOND_PARAM(/;"	d
 SPY_BUFFER_MAX	Unity/test/tests/self_assessment_utils.h	/^#define SPY_BUFFER_MAX /;"	d
-SRC	Unity/extras/fixture/test/Makefile	/^SRC = ..\/src\/unity_fixture.c \\$/;"	m
-SRC	Unity/extras/memory/test/Makefile	/^SRC = ..\/src\/unity_memory.c \\$/;"	m
-SRC1	Unity/test/Makefile	/^SRC1 = ..\/src\/unity.c tests\/test_unity_arrays.c build\/test_unity_arraysRunner.c$/;"	m
-SRC2	Unity/test/Makefile	/^SRC2 = ..\/src\/unity.c tests\/test_unity_core.c build\/test_unity_coreRunner.c$/;"	m
-SRC3	Unity/test/Makefile	/^SRC3 = ..\/src\/unity.c tests\/test_unity_doubles.c build\/test_unity_doublesRunner.c$/;"	m
-SRC4	Unity/test/Makefile	/^SRC4 = ..\/src\/unity.c tests\/test_unity_floats.c build\/test_unity_floatsRunner.c$/;"	m
-SRC5	Unity/test/Makefile	/^SRC5 = ..\/src\/unity.c tests\/test_unity_integers.c build\/test_unity_integersRunner.c$/;"	m
-SRC6	Unity/test/Makefile	/^SRC6 = ..\/src\/unity.c tests\/test_unity_integers_64.c build\/test_unity_integers_64Runner.c$/;"	m
-SRC7	Unity/test/Makefile	/^SRC7 = ..\/src\/unity.c tests\/test_unity_memory.c build\/test_unity_memoryRunner.c$/;"	m
-SRC8	Unity/test/Makefile	/^SRC8 = ..\/src\/unity.c tests\/test_unity_strings.c build\/test_unity_stringsRunner.c$/;"	m
 SRC_FILES1	Unity/examples/example_1/makefile	/^SRC_FILES1=$(UNITY_ROOT)\/src\/unity.c src\/ProductionCode.c  test\/TestProductionCode.c  test\//;"	m
 SRC_FILES1	Unity/examples/example_2/makefile	/^SRC_FILES1=\\$/;"	m
 SRC_FILES2	Unity/examples/example_1/makefile	/^SRC_FILES2=$(UNITY_ROOT)\/src\/unity.c src\/ProductionCode2.c test\/TestProductionCode2.c test\//;"	m
@@ -505,12 +461,10 @@ SetToOneToFailInTearDown	Unity/test/tests/test_unity_parameterized.c	/^static in
 SetToOneToFailInTearDown	Unity/test/tests/test_unity_strings.c	/^static int SetToOneToFailInTearDown;$/;"	v	typeref:typename:int	file:
 Signed and Unsigned Integers (of all sizes)	Unity/docs/UnityAssertionsReference.md	/^### Signed and Unsigned Integers (of all sizes)$/;"	S	section:Unity Assertions Reference""The Assertions in All Their Blessed Glory
 Silent	Unity/extras/fixture/src/unity_fixture_internals.h	/^    int Silent;$/;"	m	struct:UNITY_FIXTURE_T	typeref:typename:int
+String	pure_insertion_sort.c	/^struct String {\/* {{{ *\/$/;"	s	file:
 String Assertions	Unity/README.md	/^### String Assertions$/;"	S	section:Unity Test ![CI][]""Unity Assertion Summary
 Structs and Strings	Unity/docs/UnityAssertionsReference.md	/^### Structs and Strings$/;"	S	section:Unity Assertions Reference""The Assertions in All Their Blessed Glory
 Super Condensed Version	Unity/docs/UnityAssertionsReference.md	/^### Super Condensed Version$/;"	S	section:Unity Assertions Reference""Background and Overview
-TARGET	Unity/extras/fixture/test/Makefile	/^TARGET = ..\/build\/fixture_tests.exe$/;"	m
-TARGET	Unity/extras/memory/test/Makefile	/^TARGET = ..\/build\/memory_tests.exe$/;"	m
-TARGET	Unity/test/Makefile	/^TARGET = build\/testunity-cov.exe$/;"	m
 TARGET1	Unity/examples/example_1/makefile	/^TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)$/;"	m
 TARGET1	Unity/examples/example_2/makefile	/^TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)$/;"	m
 TARGET2	Unity/examples/example_1/makefile	/^TARGET2 = $(TARGET_BASE2)$(TARGET_EXTENSION)$/;"	m
@@ -1105,7 +1059,6 @@ UNITY_CLR_DETAILS	Unity/src/unity_internals.h	/^#define UNITY_CLR_DETAILS(/;"	d
 UNITY_COMPARISON_T	Unity/src/unity_internals.h	/^} UNITY_COMPARISON_T;$/;"	t	typeref:enum:__anon1dbef7e20203
 UNITY_CONFIG_H	Unity/examples/unity_config.h	/^#define UNITY_CONFIG_H$/;"	d
 UNITY_COUNTER_TYPE	Unity/src/unity_internals.h	/^#define UNITY_COUNTER_TYPE /;"	d
-UNITY_C_ONLY	Unity/test/Makefile	/^UNITY_C_ONLY =-c ..\/src\/unity.c -o $(BUILD_DIR)\/unity.o$/;"	m
 UNITY_DETAIL1_NAME	Unity/src/unity_internals.h	/^#define UNITY_DETAIL1_NAME /;"	d
 UNITY_DETAIL2_NAME	Unity/src/unity_internals.h	/^#define UNITY_DETAIL2_NAME /;"	d
 UNITY_DISPLAY_RANGE_CHAR	Unity/src/unity_internals.h	/^#define UNITY_DISPLAY_RANGE_CHAR /;"	d
@@ -1181,7 +1134,6 @@ UNITY_HEADER_VERSION_BUILD	Unity/CMakeLists.txt	/^set(UNITY_HEADER_VERSION_BUILD
 UNITY_HEADER_VERSION_MAJOR	Unity/CMakeLists.txt	/^set(UNITY_HEADER_VERSION_MAJOR 0)$/;"	v
 UNITY_HEADER_VERSION_MINOR	Unity/CMakeLists.txt	/^set(UNITY_HEADER_VERSION_MINOR 0)$/;"	v
 UNITY_IGNORE_AND_BAIL	Unity/src/unity.c	/^#define UNITY_IGNORE_AND_BAIL /;"	d	file:
-UNITY_INCLUDE_DOUBLE	Unity/test/Makefile	/^UNITY_INCLUDE_DOUBLE = -D UNITY_INCLUDE_DOUBLE$/;"	m
 UNITY_INT	Unity/src/unity_internals.h	/^    typedef UNITY_INT32  UNITY_INT;$/;"	t	typeref:typename:UNITY_INT32
 UNITY_INT	Unity/src/unity_internals.h	/^    typedef UNITY_INT64  UNITY_INT;$/;"	t	typeref:typename:UNITY_INT64
 UNITY_INT16	Unity/src/unity_internals.h	/^    typedef signed int      UNITY_INT16;$/;"	t	typeref:typename:signed int
@@ -1240,7 +1192,6 @@ UNITY_SMALLER_OR_EQUAL	Unity/src/unity_internals.h	/^    UNITY_SMALLER_OR_EQUAL 
 UNITY_SMALLER_THAN	Unity/src/unity_internals.h	/^    UNITY_SMALLER_THAN     = 0x4,$/;"	e	enum:__anon1dbef7e20203
 UNITY_STORAGE_T	Unity/src/unity_internals.h	/^struct UNITY_STORAGE_T$/;"	s
 UNITY_SUPPORT_64	Unity/src/unity_internals.h	/^    #define UNITY_SUPPORT_64$/;"	d
-UNITY_SUPPORT_64	Unity/test/Makefile	/^UNITY_SUPPORT_64 = -D UNITY_SUPPORT_64$/;"	m
 UNITY_SUPPORT_VARIADIC_MACROS	Unity/src/unity_internals.h	/^      #define UNITY_SUPPORT_VARIADIC_MACROS$/;"	d
 UNITY_TEST_ASSERT	Unity/src/unity_internals.h	/^#define UNITY_TEST_ASSERT(/;"	d
 UNITY_TEST_ASSERT_BITS	Unity/src/unity_internals.h	/^#define UNITY_TEST_ASSERT_BITS(/;"	d
@@ -1893,8 +1844,6 @@ __init__	Unity/auto/unity_test_summary.py	/^    def __init__(self):$/;"	m	class:
 a_dep	Unity/examples/example_4/src/meson.build	/^a_dep = declare_dependency(link_with: a_lib, include_directories: inc_dir)$/;"	V
 all	Unity/examples/example_1/makefile	/^all: clean default$/;"	t
 all	Unity/examples/example_2/makefile	/^all: clean default$/;"	t
-all	Unity/extras/fixture/test/Makefile	/^all: default noStdlibMalloc 32bits$/;"	t
-all	Unity/extras/memory/test/Makefile	/^all: default noStdlibMalloc 32bits$/;"	t
 all_files	Unity/auto/test_file_filter.rb	/^    attr_accessor :all_files, :only_files, :exclude_files$/;"	A	class:RakefileHelpers.TestFileFilter
 all_files=	Unity/auto/test_file_filter.rb	/^    attr_accessor :all_files, :only_files, :exclude_files$/;"	A	class:RakefileHelpers.TestFileFilter
 announceTestRun	Unity/extras/fixture/src/unity_fixture.c	/^static void announceTestRun(unsigned int runNumber)$/;"	f	typeref:typename:void	file:
@@ -1914,15 +1863,13 @@ build_simulator_fields	Unity/examples/example_3/rakefile_helper.rb	/^def build_s
 calloc	Unity/extras/memory/src/unity_memory.h	/^#define calloc  unity_calloc$/;"	d
 cases	Unity/examples/example_4/test/test_runners/meson.build	/^cases = [$/;"	V
 change_to	Unity/auto/colour_prompt.rb	/^  def change_to(new_colour)$/;"	f	class:ColourCommandLine
+chars	pure_insertion_sort.c	/^    char const chars[13+1];$/;"	m	struct:String	typeref:typename:char const[]	file:
 ci	Unity/examples/example_1/makefile	/^ci: CFLAGS += -Werror$/;"	t
 ci	Unity/examples/example_1/makefile	/^ci: default$/;"	t
 ci	Unity/examples/example_2/makefile	/^ci: CFLAGS += -Werror$/;"	t
 ci	Unity/examples/example_2/makefile	/^ci: default$/;"	t
 clean	Unity/examples/example_1/makefile	/^clean:$/;"	t
 clean	Unity/examples/example_2/makefile	/^clean:$/;"	t
-clean	Unity/extras/fixture/test/Makefile	/^clean:$/;"	t
-clean	Unity/extras/memory/test/Makefile	/^clean:$/;"	t
-clean	Unity/test/Makefile	/^clean:$/;"	t
 colour_print	Unity/auto/colour_prompt.rb	/^def colour_print(role, str)$/;"	f
 colour_puts	Unity/auto/colour_prompt.rb	/^def colour_puts(role, str)$/;"	f
 compile	Unity/examples/example_3/rakefile_helper.rb	/^def compile(file, _defines = [])$/;"	f
@@ -1932,9 +1879,6 @@ configure_clean	Unity/test/rakefile_helper.rb	/^  def configure_clean$/;"	f	modu
 configure_toolchain	Unity/examples/example_3/rakefile_helper.rb	/^def configure_toolchain(config_file = DEFAULT_CONFIG_FILE)$/;"	f
 configure_toolchain	Unity/test/rakefile_helper.rb	/^  def configure_toolchain(config_file = DEFAULT_CONFIG_FILE)$/;"	f	module:RakefileHelpers
 count	Unity/extras/memory/test/unity_output_Spy.c	/^static int count;$/;"	v	typeref:typename:int	file:
-cov	Unity/extras/fixture/test/Makefile	/^cov: $(BUILD_DIR)$/;"	t
-cov	Unity/extras/memory/test/Makefile	/^cov: $(BUILD_DIR)$/;"	t
-coverage	Unity/test/Makefile	/^coverage: $(SRC1) $(SRC2) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)$/;"	t
 create_args_wrappers	Unity/auto/generate_test_runner.rb	/^  def create_args_wrappers(output, tests)$/;"	f	class:UnityTestRunnerGenerator
 create_externs	Unity/auto/generate_test_runner.rb	/^  def create_externs(output, tests, _mocks)$/;"	f	class:UnityTestRunnerGenerator
 create_filename	Unity/auto/generate_module.rb	/^  def create_filename(part1, part2 = '')$/;"	f
@@ -1968,9 +1912,6 @@ dashRNotLast	Unity/extras/fixture/test/unity_fixture_Test.c	/^static const char*
 data	Unity/extras/fixture/test/template_fixture_tests.c	/^static int data = -1;$/;"	v	typeref:typename:int	file:
 default	Unity/examples/example_1/makefile	/^default: $(SRC_FILES1) $(SRC_FILES2)$/;"	t
 default	Unity/examples/example_2/makefile	/^default:$/;"	t
-default	Unity/extras/fixture/test/Makefile	/^default: $(BUILD_DIR)$/;"	t
-default	Unity/extras/memory/test/Makefile	/^default: $(BUILD_DIR)$/;"	t
-default	Unity/test/Makefile	/^default: coverage$/;"	t
 default_options	Unity/auto/generate_module.rb	/^  def self.default_options$/;"	S	class:UnityModuleGenerator
 default_options	Unity/auto/generate_test_runner.rb	/^  def self.default_options$/;"	S	class:UnityTestRunnerGenerator
 description	Unity/library.json	/^  "description": "Simple Unit Testing for C",$/;"	s
@@ -2057,14 +1998,16 @@ initialize	Unity/auto/parse_output.rb	/^  def initialize$/;"	f	class:ParseOutput
 initialize	Unity/auto/stylize_as_junit.rb	/^  def initialize$/;"	f	class:UnityToJUnit
 initialize	Unity/auto/test_file_filter.rb	/^    def initialize(all_files = false)$/;"	f	class:RakefileHelpers.TestFileFilter
 initialize	Unity/auto/unity_test_summary.rb	/^  def initialize(_opts = {})$/;"	f	class:UnityTestSummary
+insertion_sort	insertion_sort/insertion_sort.c	/^static void insertion_sort(char * ret, unsigned long len) {$/;"	f	typeref:typename:void	file:
+insertion_sort2	pure_insertion_sort.c	/^static struct String insertion_sort2(char const * const str, unsigned long const len) {\/* {{{ */;"	f	typeref:struct:String	file:
 int1	Unity/extras/fixture/test/unity_fixture_Test.c	/^static int int1;$/;"	v	typeref:typename:int	file:
 int2	Unity/extras/fixture/test/unity_fixture_Test.c	/^static int int2;$/;"	v	typeref:typename:int	file:
 int3	Unity/extras/fixture/test/unity_fixture_Test.c	/^static int int3;$/;"	v	typeref:typename:int	file:
 int4	Unity/extras/fixture/test/unity_fixture_Test.c	/^static int int4;$/;"	v	typeref:typename:int	file:
-intDetection	Unity/test/Makefile	/^intDetection:$/;"	t
 isArgumentOne	Unity/test/testdata/testRunnerGenerator.c	/^int isArgumentOne(int i)$/;"	f	typeref:typename:int
 isOverrun	Unity/extras/memory/src/unity_memory.c	/^static int isOverrun(void* mem)$/;"	f	typeref:typename:int	file:
 keywords	Unity/library.json	/^  "keywords": "unit-testing, testing, tdd, testing-framework",$/;"	s
+len	pure_insertion_sort.c	/^    unsigned long const len;$/;"	m	struct:String	typeref:typename:unsigned long const	file:
 lib_list	Unity/examples/example_4/src/meson.build	/^lib_list = {'a': ['ProductionCode.c' ], 'b': ['ProductionCode2.c']}$/;"	V
 license	Unity/library.json	/^  "license": "MIT",$/;"	s
 link_it	Unity/examples/example_3/rakefile_helper.rb	/^def link_it(exe_name, obj_list)$/;"	f
@@ -2104,8 +2047,9 @@ main	Unity/test/expectdata/testsample_run2.c	/^int main(void)$/;"	f	typeref:type
 main	Unity/test/expectdata/testsample_yaml.c	/^int main(void)$/;"	f	typeref:typename:int
 main	Unity/test/testdata/testRunnerGenerator.c	/^int main(void)$/;"	f	typeref:typename:int
 main	Unity/test/testdata/testRunnerGeneratorWithMocks.c	/^int main(void)$/;"	f	typeref:typename:int
-main	insertion_sort.c	/^int main() {$/;"	f	typeref:typename:int
-main	insertion_sort.c	/^int main(void) {$/;"	f	typeref:typename:int
+main	insertion_sort/insertion_sort.c	/^int main(void) {$/;"	f	typeref:typename:int
+main	nearest_neighbor_heuristic/nearest_neighbor_heuristic.c	/^int main(void) {$/;"	f	typeref:typename:int
+main	pure_insertion_sort.c	/^int main(void) {$/;"	f	typeref:typename:int
 malloc	Unity/extras/memory/src/unity_memory.h	/^#define malloc  unity_malloc$/;"	d
 malloc_count	Unity/extras/memory/src/unity_memory.c	/^static int malloc_count;$/;"	v	typeref:typename:int	file:
 malloc_fail_countdown	Unity/extras/memory/src/unity_memory.c	/^static int malloc_fail_countdown = MALLOC_DONT_FAIL;$/;"	v	typeref:typename:int	file:
@@ -2120,8 +2064,6 @@ name	Unity/extras/fixture/test/unity_fixture_Test.c	/^static const char* name[] 
 name	Unity/library.json	/^  "name": "Unity",$/;"	s
 neutralize_filename	Unity/auto/generate_module.rb	/^  def neutralize_filename(name, start_cap: true)$/;"	f
 noOptions	Unity/extras/fixture/test/unity_fixture_Test.c	/^static const char* noOptions[] = {$/;"	v	typeref:typename:const char * []	file:
-noStdlibMalloc	Unity/extras/fixture/test/Makefile	/^noStdlibMalloc: $(BUILD_DIR)$/;"	t
-noStdlibMalloc	Unity/extras/memory/test/Makefile	/^noStdlibMalloc: $(BUILD_DIR)$/;"	t
 old_value	Unity/extras/fixture/src/unity_fixture.c	/^    void* old_value;$/;"	m	struct:PointerPair	typeref:typename:void *	file:
 only_files	Unity/auto/test_file_filter.rb	/^    attr_accessor :all_files, :only_files, :exclude_files$/;"	A	class:RakefileHelpers.TestFileFilter
 only_files=	Unity/auto/test_file_filter.rb	/^    attr_accessor :all_files, :only_files, :exclude_files$/;"	A	class:RakefileHelpers.TestFileFilter
@@ -2245,7 +2187,9 @@ setUp	Unity/test/tests/test_unity_integers_64.c	/^void setUp(void)$/;"	f	typeref
 setUp	Unity/test/tests/test_unity_memory.c	/^void setUp(void)$/;"	f	typeref:typename:void
 setUp	Unity/test/tests/test_unity_parameterized.c	/^void setUp(void)$/;"	f	typeref:typename:void
 setUp	Unity/test/tests/test_unity_strings.c	/^void setUp(void)$/;"	f	typeref:typename:void
-setUp	insertion_sort.c	/^void setUp(void)$/;"	f	typeref:typename:void
+setUp	insertion_sort/insertion_sort.c	/^void setUp(void)\/* {{{ *\/$/;"	f	typeref:typename:void
+setUp	nearest_neighbor_heuristic/nearest_neighbor_heuristic.c	/^void setUp(void)$/;"	f	typeref:typename:void
+setUp	pure_insertion_sort.c	/^void setUp(void)\/* {{{ *\/$/;"	f	typeref:typename:void
 set_output	Unity/auto/stylize_as_junit.py	/^    def set_output(self, output):$/;"	m	class:UnityTestSummary
 set_root_path	Unity/auto/stylize_as_junit.py	/^    def set_root_path(self, path):$/;"	m	class:UnityTestSummary
 set_root_path	Unity/auto/unity_test_summary.py	/^    def set_root_path(self, path):$/;"	m	class:UnityTestSummary
@@ -2319,9 +2263,10 @@ tearDown	Unity/test/tests/test_unity_integers_64.c	/^void tearDown(void)$/;"	f	t
 tearDown	Unity/test/tests/test_unity_memory.c	/^void tearDown(void)$/;"	f	typeref:typename:void
 tearDown	Unity/test/tests/test_unity_parameterized.c	/^void tearDown(void)$/;"	f	typeref:typename:void
 tearDown	Unity/test/tests/test_unity_strings.c	/^void tearDown(void)$/;"	f	typeref:typename:void
-tearDown	insertion_sort.c	/^void tearDown(void)$/;"	f	typeref:typename:void
+tearDown	insertion_sort/insertion_sort.c	/^void tearDown(void)\/* {{{ *\/$/;"	f	typeref:typename:void
+tearDown	nearest_neighbor_heuristic/nearest_neighbor_heuristic.c	/^void tearDown(void)$/;"	f	typeref:typename:void
+tearDown	pure_insertion_sort.c	/^void tearDown(void)\/* {{{ *\/$/;"	f	typeref:typename:void
 test	Unity/examples/example_4/meson.build	/^subdir('test')$/;"	S
-test	Unity/test/Makefile	/^test: $(SRC1) $(SRC2) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) $(SRC8)$/;"	t
 test/test_runners/TestProductionCode2_Runner.c	Unity/examples/example_1/makefile	/^test\/test_runners\/TestProductionCode2_Runner.c: test\/TestProductionCode2.c$/;"	t
 test/test_runners/TestProductionCode_Runner.c	Unity/examples/example_1/makefile	/^test\/test_runners\/TestProductionCode_Runner.c: test\/TestProductionCode.c$/;"	t
 test1	Unity/examples/example_1/meson.build	/^test('test1', test1,$/;"	t
@@ -3188,7 +3133,6 @@ testUIntsWithinDeltaAndCustomMessage	Unity/test/tests/test_unity_integers.c	/^vo
 testUnitySizeInitializationReminder	Unity/test/tests/test_unity_core.c	/^void testUnitySizeInitializationReminder(void)$/;"	f	typeref:typename:void
 testVerifyIntFailingPointerComparisonOnZeroLengthArray	Unity/test/tests/test_unity_arrays.c	/^void testVerifyIntFailingPointerComparisonOnZeroLengthArray(void)$/;"	f	typeref:typename:void
 testVerifyIntPassingPointerComparisonOnZeroLengthArray	Unity/test/tests/test_unity_arrays.c	/^void testVerifyIntPassingPointerComparisonOnZeroLengthArray(void)$/;"	f	typeref:typename:void
-test_	insertion_sort.c	/^static void test_(void) {$/;"	f	typeref:typename:void	file:
 test_AnotherIgnoredTest	Unity/examples/example_1/test/TestProductionCode2.c	/^void test_AnotherIgnoredTest(void)$/;"	f	typeref:typename:void
 test_AnotherIgnoredTest	Unity/examples/example_3/test/TestProductionCode2.c	/^void test_AnotherIgnoredTest(void)$/;"	f	typeref:typename:void
 test_AnotherIgnoredTest	Unity/examples/example_4/test/TestProductionCode2.c	/^void test_AnotherIgnoredTest(void)$/;"	f	typeref:typename:void
@@ -3219,6 +3163,9 @@ test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValue	Unity/
 test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain	Unity/examples/example_1/test/TestProductionCode.c	/^void test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain(void)$/;"	f	typeref:typename:void
 test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain	Unity/examples/example_3/test/TestProductionCode.c	/^void test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain(void)$/;"	f	typeref:typename:void
 test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain	Unity/examples/example_4/test/TestProductionCode.c	/^void test_FunctionWhichReturnsLocalVariable_ShouldReturnTheCurrentCounterValueAgain(void)$/;"	f	typeref:typename:void
+test_GivenUnsortedString_SortAlphabetically	insertion_sort/insertion_sort.c	/^static void test_GivenUnsortedString_SortAlphabetically(void) {$/;"	f	typeref:typename:void	file:
+test_GivenUnsortedString_SortAlphabetically	pure_insertion_sort.c	/^static void test_GivenUnsortedString_SortAlphabetically(void) {$/;"	f	typeref:typename:void	file:
+test_GivenXYZ_DoABC	nearest_neighbor_heuristic/nearest_neighbor_heuristic.c	/^static void test_GivenXYZ_DoABC(void) {$/;"	f	typeref:typename:void	file:
 test_IgnoredTest	Unity/examples/example_1/test/TestProductionCode2.c	/^void test_IgnoredTest(void)$/;"	f	typeref:typename:void
 test_IgnoredTest	Unity/examples/example_3/test/TestProductionCode2.c	/^void test_IgnoredTest(void)$/;"	f	typeref:typename:void
 test_IgnoredTest	Unity/examples/example_4/test/TestProductionCode2.c	/^void test_IgnoredTest(void)$/;"	f	typeref:typename:void
