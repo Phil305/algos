@@ -11,12 +11,10 @@
 
 static void insertion_sort(char * ret, unsigned long len) {
     for (unsigned long i=1; i < len; i ++) {
-        unsigned long j = i-1;
-        while (j > 0) {
-            // continue if prev char in array not earlier in alphabet
-            if (ret[j] >= ret[j-1]) {
-                break;
-            }
+        unsigned long j = i;
+        while (j > 0 &&
+                // don't sort if prev char in str is earlier in alphabet than current
+                ret[j] < ret[j-1]) {
             char tmp = ret[j];
             ret[j] = ret[j-1];
             ret[j-1] = tmp;
