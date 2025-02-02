@@ -34,7 +34,7 @@ static void test_GivenXYZ_DoABC(void) {
     for (unsigned long i=0; i<sizeof(points_)/sizeof(int); i++) {
         points[i] = &points_[i];
     }
-    int init_point = *points[0];
+    //int init_point = *points[0];
     int i = 0;
     //      While there are still unvisited points
     //          $i = i + 1$

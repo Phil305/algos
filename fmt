@@ -2,4 +2,5 @@
 
 set -xeuo pipefail
 
-clang-tidy "$1"
+# [PPIndentWidth](https://clang.llvm.org/docs/ClangFormatStyleOptions.html#ppindentwidth)
+clang-tidy --format-style='{BasedOnStyle: llvm, IndentWidth: 8, PPIndentWidth: 3}' "${REPO_ROOT}"/Unity/src/unity.c "$1" -- -I "${REPO_ROOT}"/Unity/src "$1"
