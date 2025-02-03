@@ -2,4 +2,4 @@
 
 set -xeuo pipefail
 
-clang-tidy  "$1" -- -I "${REPO_ROOT}"/Unity/src
+clang-tidy -checks=*,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers -warnings-as-errors=* "$1" -- -I "${REPO_ROOT}"/Unity/src
