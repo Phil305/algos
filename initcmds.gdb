@@ -1,6 +1,6 @@
-set logging on
-set logging overwrite
 set logging file gdb.log
+set logging overwrite
+set logging on
 
 up 3
 
