@@ -66,10 +66,9 @@ static int closest_unvisited_point_idx(int visited_point, int **points, int num_
  */
 static void test_GivenXYZ_DoABC(void) {
     int expected[] = {0, 1, -1, 3, -5, 11, -21};
-    int actual[] = {1, 2};
     int result[sizeof(expected) / sizeof(int)];
 
-    int points[] = {0, -21, 1, -5, 11, -1, 3};
+    int points[] = {0, -21, 1, 3, -5, 11, -1};
     int *P[sizeof(points) / sizeof(int)];
     for (unsigned long i = 0; i < sizeof(points) / sizeof(int); i++) {
         P[i] = &points[i];
@@ -88,10 +87,6 @@ static void test_GivenXYZ_DoABC(void) {
                                    /*num_points=*/sizeof(points) / sizeof(int));
         result[i] = *P[closest_point_idx];
         P[closest_point_idx] = NULL;
-        raise(SIGINT);
-        if (i == 7) {
-            break;
-        }
         //          `$p_i−1$` Visit `$p_i$`
         //      Return to `$p_0$` from `$p_n−1$`
         // (The Algorithm Design Manual; Chapter 1 Introduction to
@@ -100,7 +95,7 @@ static void test_GivenXYZ_DoABC(void) {
 
     // [Unity Assertions
     // Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
-    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/actual,
+    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/result,
                                 /*num_elements=*/sizeof(expected) /
                                     sizeof(int));
 }
