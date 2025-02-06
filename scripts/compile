@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# set `STRICT_RUNLOOP_CHECKS` to anything (except `false`) to enable all checks
+
 set -xeuo pipefail
 
 TMPDIR="${TMPDIR:-/tmp}"
