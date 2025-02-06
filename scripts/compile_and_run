@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-set -xeuo pipefail
-
-"${REPO_ROOT}"/scripts/compile "$1"
-"${REPO_ROOT}"/scripts/run "$1"

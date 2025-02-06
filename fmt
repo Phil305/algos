@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-set -xeuo pipefail
-
-# [PPIndentWidth](https://clang.llvm.org/docs/ClangFormatStyleOptions.html#ppindentwidth)
-clang-format -i -style='{BasedOnStyle: llvm, IndentWidth: 4, PPIndentWidth: 3}' "$1"

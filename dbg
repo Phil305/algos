@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-set -xeuo pipefail
-
-TMPDIR="${TMPDIR:-/tmp}"
-
-"${REPO_ROOT}"/scripts/compile "$1"
-gdb -q -x initcmds.gdb -ex run "${TMPDIR}/a.out"

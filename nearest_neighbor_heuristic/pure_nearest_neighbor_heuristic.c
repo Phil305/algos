@@ -1,3 +1,7 @@
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-parameter"
+#pragma clang diagnostic ignored "-Wunused-variable"
+
 #include <assert.h>
 #include <limits.h>
 #include <signal.h>
@@ -94,14 +98,10 @@ static void
 test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors(void) {
     int expected[] = {0, 1, -1, 3, -5, 11, -21};
     int points[] = {0, -21, 11, -5, 3, -1, 1};
-    int result[sizeof(expected) / sizeof(int)];
-
-    sort_by_nearest_neighbors(/*ret=*/result, points,
-                              /*amt_points=*/sizeof(expected) / sizeof(int));
 
     // [Unity Assertions
     // Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
-    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/result,
+    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/sort_by_nearest_neighbors(/*ret=*/result, points, /*amt_points=*/sizeof(expected) / sizeof(int)),
                                 /*num_elements=*/sizeof(expected) /
                                     sizeof(int));
 }
@@ -114,3 +114,4 @@ int main(void) {
         test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors);
     return UNITY_END();
 }
+#pragma clang diagnostic pop
