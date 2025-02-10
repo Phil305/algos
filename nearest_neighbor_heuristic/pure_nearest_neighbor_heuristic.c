@@ -1,7 +1,3 @@
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-parameter"
-#pragma clang diagnostic ignored "-Wunused-variable"
-
 #include <assert.h>
 #include <limits.h>
 #include <signal.h>
@@ -17,6 +13,11 @@ void setUp(void) /* {{{ */
 void tearDown(void) /* {{{ */
 {}
 /* }}} */
+
+struct Point {
+};
+struct PointArray {
+};
 
 static bool unvisited_points(int *points[], int num_points) { /* {{{ */
     for (int i = 0; i < num_points; i++) {
@@ -42,10 +43,6 @@ static int closest_unvisited_point_idx(int visited_point, int **points,
         }
         dist = abs(visited_point - *points[i]);
         if (dist <= min_dist) {
-            printf("visited_point=%d, closest_unvisited_point=%d, dist=%d, "
-                   "prev_min_dist=%d\n",
-                   visited_point, *points[i], dist,
-                   min_dist != INT_MAX ? min_dist : -1);
             min_dist = dist;
             closest_unvisited_idx = i;
         }
@@ -68,7 +65,7 @@ static int closest_unvisited_point_idx(int visited_point, int **points,
  * (The Algorithm Design Manual; Chapter 1 Introduction to Algorithm Design; pp.
  * 5-6; Steven S. Skiena; 2020)
  */
-static void sort_by_nearest_neighbors(int *ret, int *points, int amt_points) {
+static void sort_by_nearest_neighbors(int *ret, int *points, int amt_points) { /* {{{ */
     int *P[amt_points];
     for (int i = 0; i < amt_points; i++) {
         P[i] = &points[i];
@@ -94,14 +91,22 @@ static void sort_by_nearest_neighbors(int *ret, int *points, int amt_points) {
         // Algorithm Design; pp. 5-6; Steven S. Skiena; 2020)
     }
 }
+/* }}} */
+struct PointArray sort_by_nearest_neighbors2() {
+    return (struct PointArray){};
+}
 static void
 test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors(void) {
     int expected[] = {0, 1, -1, 3, -5, 11, -21};
     int points[] = {0, -21, 11, -5, 3, -1, 1};
+    int result[sizeof(expected) / sizeof(int)];
 
-    // [Unity Assertions
-    // Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
-    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/sort_by_nearest_neighbors(/*ret=*/result, points, /*amt_points=*/sizeof(expected) / sizeof(int)),
+    sort_by_nearest_neighbors(/*ret=*/result, points,
+                              /*amt_points=*/sizeof(expected) / sizeof(int));
+    struct PointArray point_objs = sort_by_nearest_neighbors2();
+
+    // [Unity Assertions Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
+    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/result,
                                 /*num_elements=*/sizeof(expected) /
                                     sizeof(int));
 }
@@ -114,4 +119,3 @@ int main(void) {
         test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors);
     return UNITY_END();
 }
-#pragma clang diagnostic pop
