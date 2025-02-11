@@ -15,8 +15,11 @@ void tearDown(void) /* {{{ */
 /* }}} */
 
 struct Point {
+    int val;
+    bool visited;
 };
 struct PointArray {
+    struct Point points[7];
 };
 
 static bool unvisited_points(int *points[], int num_points) { /* {{{ */
@@ -93,7 +96,12 @@ static void sort_by_nearest_neighbors(int *ret, int *points, int amt_points) { /
 }
 /* }}} */
 struct PointArray sort_by_nearest_neighbors2() {
-    return (struct PointArray){};
+    struct PointArray ret;
+    int point_vals[] = {0, -21, 11, -5, 3, -1, 1};
+    for (int i = 0; i < sizeof(point_vals) / sizeof(int); i++) {
+        ret.points[i] = (struct Point){.val = point_vals[i], .visited = false};
+    }
+    return ret;
 }
 static void
 test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors(void) {
@@ -101,12 +109,13 @@ test_GivenPointsNotSortedByNearestNeighbors_SortByNearestNeighbors(void) {
     int points[] = {0, -21, 11, -5, 3, -1, 1};
     int result[sizeof(expected) / sizeof(int)];
 
-    sort_by_nearest_neighbors(/*ret=*/result, points,
+    sort_by_nearest_neighbors(/*ret=*/result,
+                              points,
                               /*amt_points=*/sizeof(expected) / sizeof(int));
-    struct PointArray point_objs = sort_by_nearest_neighbors2();
 
     // [Unity Assertions Reference](https://github.com/ThrowTheSwitch/Unity/tree/v2.6.1/docs/UnityAssertionsReference.md)
-    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected, /*actual=*/result,
+    TEST_ASSERT_EQUAL_INT_ARRAY(/*expected=*/expected,
+                                /*actual=*/sort_by_nearest_neighbors2().points,
                                 /*num_elements=*/sizeof(expected) /
                                     sizeof(int));
 }
