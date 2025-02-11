@@ -99,6 +99,7 @@ struct PointArray sort_by_nearest_neighbors2() {
     struct PointArray ret;
     int point_vals[] = {0, -21, 11, -5, 3, -1, 1};
     for (int i = 0; i < sizeof(point_vals) / sizeof(int); i++) {
+        // [Compound literals](https://en.cppreference.com/w/c/language/compound_literal)
         ret.points[i] = (struct Point){.val = point_vals[i], .visited = false};
     }
     return ret;
