@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <limits.h>
-//#include <signal.h>
+// #include <signal.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
@@ -65,7 +65,7 @@ static int closest_unvisited_point_idx(int visited_point, int **points, int num_
  */
 static struct PointArray sort_by_nearest_neighbors(int *ret, int *points, int amt_points) { /* {{{ */
     int sorted_points[amt_points];
-    memmove(/*dest=*/sorted_points, /*src=*/ret, /*n=*/amt_points); // NOLINT(clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling)
+    memmove(/*dest=*/sorted_points, /*src=*/ret, /*n=*/(size_t)amt_points); // NOLINT(clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling)
     int *P[amt_points];
     for (int i = 0; i < amt_points; i++) {
         P[i] = &points[i];
@@ -91,7 +91,10 @@ static struct PointArray sort_by_nearest_neighbors(int *ret, int *points, int am
         // Algorithm Design; pp. 5-6; Steven S. Skiena; 2020)
     }
     struct PointArray parray;
-    memmove(/*dest=*/(void*)parray.points, /*src=*/sorted_points, /*n=*/amt_points * sizeof(int)); // NOLINT(clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling)
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wcast-qual"
+    memmove(/*dest=*/(void *)parray.points, /*src=*/sorted_points, /*n=*/(size_t)amt_points * sizeof(int)); // NOLINT(clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling)
+    #pragma clang diagnostic pop
     return parray;
 }
 /* }}} */
