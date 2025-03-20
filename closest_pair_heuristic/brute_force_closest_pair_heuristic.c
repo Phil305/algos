@@ -23,14 +23,14 @@ void tearDown(void) {}
  * [source: algo design manual, p.7]
  */
 
-//static int dist(int n1, int n2) {
-//    return abs(n1 - n2);
-//}
+// static int dist(int n1, int n2) {
+//     return abs(n1 - n2);
+// }
 
 static void endpoint_pairs(int ret[][2], int const endpoints[], int len) {
     for (int i = 1; i < len; i++) {
-        ret[i-1][0] = endpoints[i - 1];
-        ret[i-1][1] = endpoints[i];
+        ret[i - 1][0] = endpoints[i - 1];
+        ret[i - 1][1] = endpoints[i];
     }
 }
 
@@ -39,17 +39,17 @@ int main(void) {
     int pairs[sizeof(P) / sizeof(int)][2] = {0};
     endpoint_pairs(/*ret=*/pairs, /*endpoints=*/P, /*len=*/sizeof(P) / sizeof(int));
 
-    for (unsigned long i=0; i < sizeof(P) / sizeof(int); i++) {
+    for (unsigned long i = 0; i < (sizeof(P) / sizeof(int)) - 1; i++) {
         printf("(%d, %d)\n", pairs[i][0], pairs[i][1]);
     }
-    //int s = 0;
-    //int t = 0;
+    // int s = 0;
+    // int t = 0;
 
-    //for (unsigned long i = 1; i < sizeof(P) / sizeof(int); i++) {
-    //    int d = INT_MAX;
-    //    s = P[i - 1];
-    //    t = P[i];
-    //    if (dist(s, t) <= d) {
+    // for (unsigned long i = 1; i < sizeof(P) / sizeof(int); i++) {
+    //     int d = INT_MAX;
+    //     s = P[i - 1];
+    //     t = P[i];
+    //     if (dist(s, t) <= d) {
 
     return 0;
 }
