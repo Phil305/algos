@@ -27,39 +27,34 @@ void tearDown(void) {}
 //     return abs(n1 - n2);
 // }
 /* }}} */
-static void distinct_vertex_chains(int ret[][2], int const endpoints[], int endpoints_len) { /* {{{ */
+static void distinct_vertex_chains(int ret[][2], int ret_len, int const endpoints[], int endpoints_len) { /* {{{ */
     int offset = 0;
-    for (int i = 0; i < endpoints_len; i++) {
+    for (int i = 0; i < endpoints_len && offset < ret_len; i++) {
         for (int j = i; j < endpoints_len - 1; j++) {
             ret[offset][0] = endpoints[i];
             ret[offset][1] = endpoints[j + 1];
-            offset += 1;
-        }
-        printf("%d\n", offset);
-        if (offset == 21) {
-            raise(SIGINT);
+            offset++;
         }
     }
 }
 /* }}} */
-// static void print_pairs(int pairs[][2], int const len) { /* {{{ */
-//     for (int i = 0; i < len; i++) {
-//         for (int j = i; j < len; j++) {
-//             printf("(%d, %d)\n", pairs[j][0], pairs[j][1]);
-//         }
-//     }
-// }
+static void print_pairs(int pairs[][2], int const len) { /* {{{ */
+    for (int i = 0; i < len; i++) {
+        printf("(%d, %d)\n", pairs[i][0], pairs[i][1]);
+    }
+}
 static int triangular_number(int height) {
     return (height * (height + 1)) / 2;
 }
 /* }}} */
 int main(void) {
     int P[] = {0, -21, 11, -5, 3, -1, 1};
-    int pairs[triangular_number(/*height=*/sizeof(P) / sizeof(int))][2];
+    int longest_row_len = (sizeof(P) / sizeof(int)) - 1;
+    int pairs[triangular_number(/*height=*/longest_row_len)][2];
     /// int ordered_pairs[sizeof(P)/sizeof(int)] = {0};
 
-    distinct_vertex_chains(/*ret=*/pairs, /*endpoints=*/P, /*endpoints_len=*/sizeof(P) / sizeof(int));
-    // print_pairs(pairs, /*len=*/sizeof(P) / sizeof(int));
+    distinct_vertex_chains(/*ret=*/pairs, /*ret_len=*/triangular_number(/*height=*/longest_row_len), /*endpoints=*/P, /*endpoints_len=*/sizeof(P) / sizeof(int));
+    print_pairs(pairs, /*len=*/triangular_number(/*height=*/longest_row_len));
 
     // for (unsigned long i = 1; i < sizeof(P) / sizeof(int); i++) {
     //     int d = INT_MAX;
