@@ -23,9 +23,9 @@ void tearDown(void) {}
  * [source: algo design manual, p.7]
  */
 
-// static int dist(int n1, int n2) { /* {{{ */
-//     return abs(n1 - n2);
-// }
+static int dist(int n1, int n2) { /* {{{ */
+    return abs(n1 - n2);
+}
 /* }}} */
 static void distinct_vertex_chains(int ret[][2], int ret_len, int const endpoints[], int endpoints_len) { /* {{{ */
     int offset = 0;
@@ -49,18 +49,33 @@ static int triangular_number(int height) {
 /* }}} */
 int main(void) {
     int P[] = {0, -21, 11, -5, 3, -1, 1};
-    int longest_row_len = (sizeof(P) / sizeof(int)) - 1;
-    int pairs[triangular_number(/*height=*/longest_row_len)][2];
-    /// int ordered_pairs[sizeof(P)/sizeof(int)] = {0};
+    int n = sizeof(P) / sizeof(int);
 
-    distinct_vertex_chains(/*ret=*/pairs, /*ret_len=*/triangular_number(/*height=*/longest_row_len), /*endpoints=*/P, /*endpoints_len=*/sizeof(P) / sizeof(int));
-    print_pairs(pairs, /*len=*/triangular_number(/*height=*/longest_row_len));
+    int longest_row_len = n - 1;
+    int num_uniq_pairs=triangular_number(/*height=*/longest_row_len);
+    int pairs[num_uniq_pairs][2];
 
-    // for (unsigned long i = 1; i < sizeof(P) / sizeof(int); i++) {
-    //     int d = INT_MAX;
-    //     int s = 0;
-    //     int t = 0;
-    //     for (unsigned long j = i; j < sizeof(P) / sizeof(int); j++) {
+    distinct_vertex_chains(/*ret=*/pairs, /*ret_len=*/triangular_number(/*height=*/longest_row_len), /*endpoints=*/P, /*endpoints_len=*/n);
+    print_pairs(pairs, /*len=*/num_uniq_pairs);
+
+    for (unsigned long i = 1; i < n; i++) {
+         int d = INT_MAX;
+        int s;
+        int t;
+        int sm;
+        int tm;
+         for (int j=0; j < num_uniq_pairs; j++) {
+             s = pairs[j][0];
+             t = pairs[j][1];
+            if (dist(s, t) <= d) {
+                d = dist(s,t);
+                sm = s;
+                tm = t;
+            }
+         }
+         int edge[2] = {sm, tm};
+         printf("(%d, %d)\n", edge[0], edge[1]);
+    }
     //         int s_ = pairs[i][0];
     //         int t_ = pairs[j][1];
     //         if (dist(s_, t_) <= d) {
